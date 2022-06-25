@@ -142,8 +142,8 @@ main {
     color: var(--title-txt-color);
 }
 
-.modal-form-label {
-    margin-bottom: 4px;
+.modal-form-label{
+    display: block;    
 
     font-size: 12px;
     line-height: 1.17;
@@ -152,12 +152,15 @@ main {
     color: var(--txt-color);
 }
 
+.modal-form-label:not(.textarea-label){
+    margin-bottom: 10px;
+}
+
 .modal-input-wrap {
     position: relative;
     display: inline-block;
     width: 100%;
-    
-    margin-bottom: 10px;
+    margin-top: 4px;
 }
 
 .modal-input {
@@ -190,8 +193,12 @@ main {
     fill: var(--accent-color);
 }
 
-textarea.modal-input {
+.textarea-label {
     margin-bottom: 20px;
+}
+
+textarea.modal-input {
+    margin-top: 4px;
     padding: 12px 16px;
 
     height: 120px;
@@ -227,11 +234,11 @@ textarea.modal-input::placeholder {
     
     fill: transparent;
 
-    transition: fill 250ms cubic-bezier(.4, 0, .2, 1), border 250ms cubic-bezier(.4, 0, .2, 1), border-color 250ms cubic-bezier(.4, 0, .2, 1), background-color 250ms cubic-bezier(.4, 0, .2, 1);
+    transition: fill 250ms cubic-bezier(.4, 0, .2, 1), border-color 250ms cubic-bezier(.4, 0, .2, 1), background-color 250ms cubic-bezier(.4, 0, .2, 1);
 }
 
 .modal-checkbox-wrap input:focus + .modal-checkbox-icon {
-    border: 2px solid var(--title-txt-color);
+    outline: 2px solid var(--title-txt-color);
 }
 
 .modal-checkbox-wrap input:checked + .modal-checkbox-icon {
@@ -423,6 +430,7 @@ body.no-scroll .header {
 .subscribe-button .icon {
     margin-left: 10px;
 }
+
 .hero .button:hover,
 .hero .button:focus,
 .modal-submit-button:hover,
@@ -471,6 +479,7 @@ body.no-scroll .header {
     border-radius: 50%;
     fill: #000000;
     background-color: var(--main-bg-color);
+    transition: fill 250ms cubic-bezier(.4, 0, .2, 1);
 }
 
 .btn-modal-close:hover {
